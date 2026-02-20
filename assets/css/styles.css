@@ -1,0 +1,107 @@
+:root{
+  --bg:#0b1220;
+  --surface:#0f172a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --brand:#f59e0b;
+  --border:#243041;
+  --radius:12px;
+
+  --s-1:4px; --s0:8px; --s1:12px; --s2:16px; --s3:24px; --s4:32px;
+
+  --fs-1:16px; --fs-2:20px; --fs-3:28px; --lh:1.6;
+}
+
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:var(--lh);
+  font-size:var(--fs-1);
+  background:linear-gradient(180deg,var(--bg),#070b14 70%);
+  color:var(--text);
+}
+
+/* 2) Layout base */
+.container{
+  width:min(980px, calc(100% - 2*var(--s3)));
+  margin-inline:auto;
+}
+header{ padding:var(--s4) 0 var(--s2); }
+main{ padding:var(--s2) 0 var(--s4); }
+footer{ padding:var(--s3) 0; color:var(--muted); }
+
+h1,h2,h3{ line-height:1.2; margin:0 0 var(--s1); }
+h1{ font-size:var(--fs-3); letter-spacing:-0.02em; }
+h2{ font-size:var(--fs-2); margin-top:var(--s3); }
+p{ margin:0 0 var(--s2); }
+small{ color:var(--muted); }
+
+/* 4) Enlaces + foco accesible */
+a{ color:var(--brand); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+:focus-visible{
+  outline:3px solid color-mix(in srgb, var(--brand) 75%, white);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+
+.skip-link{
+  position:absolute;
+  left:-999px; top:0;
+  background:var(--brand);
+  color:#111827;
+  padding:var(--s0) var(--s1);
+  border-radius:10px;
+  font-weight:700;
+}
+.skip-link:focus{ left:var(--s3); top:var(--s3); }
+
+/* 6) Navegación */
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--s1);
+  list-style:none;
+  padding:0;
+  margin:0 0 var(--s2);
+}
+.nav a{
+  display:inline-block;
+  padding:var(--s0) var(--s1);
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:color-mix(in srgb, var(--surface) 80%, black);
+}
+.nav a[aria-current="page"]{
+  border-color:color-mix(in srgb, var(--brand) 70%, var(--border));
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 20%, transparent);
+}
+
+.card{
+  background:color-mix(in srgb, var(--surface) 90%, black);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:var(--s2);
+}
+
+/* 8) Tablas */
+table{ width:100%; border-collapse:collapse; }
+caption{ text-align:left; font-weight:800; margin-bottom:var(--s1); }
+th,td{ border:1px solid var(--border); padding:var(--s0); text-align:left; }
+thead th{ background:color-mix(in srgb, var(--surface) 90%, black); }
+
+/* 9) Media */
+figure{ margin:0 0 var(--s2); }
+figcaption{ color:var(--muted); margin-top:var(--s0); }
+iframe,video,audio,img{ max-width:100%; border-radius:var(--radius); }
+img{ display:block; }
