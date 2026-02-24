@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media | Web Básica</title>
+    <meta name="description" content="Ejemplos de video, audio e iframe con buenas prácticas.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header>
+      <div class="container">
+        <h1>Media</h1>
+        <p>Contenido embebido con uso responsable.</p>
+      </div>
+    </header>
+
+    <nav aria-label="Navegación principal">
+      <div class="container">
+        <ul class="nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="datos.html">Datos</a></li>
+          <li><a href="media.html" aria-current="page">Media</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="contenido">
+      <div class="container">
+        <section class="card">
+          <h2>Iframe (ejemplo)</h2>
+          <iframe
+            title="Ejemplo embebido"
+            src="https://www.openstreetmap.org/export/embed.html"
+            width="100%"
+            height="360"
+            loading="lazy"
+          ></iframe>
+          <p>
+            Si el contenido es de terceros, úsalo con criterio y preferiblemente con <code>loading="lazy"</code>.
+          </p>
+
+          <h2>Video (plantilla)</h2>
+          <p>
+            Cuando agregues un video real, colócalo en <code>assets/media/</code> y usa:
+          </p>
+          <pre><code>&lt;video controls preload="metadata"&gt;...&lt;/video&gt;</code></pre>
+
+          <h2>Audio (plantilla)</h2>
+          <p>
+            Para audio: <code>&lt;audio controls preload="metadata"&gt;...&lt;/audio&gt;</code>
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>Web Básica — Media</small>
+      </div>
+    </footer>
+  </body>
+</html>
