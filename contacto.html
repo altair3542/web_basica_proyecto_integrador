@@ -14,7 +14,7 @@
     <header>
       <div class="container">
         <h1>Contacto</h1>
-        <p>En la sesión 5 construiremos el formulario accesible.</p>
+        <p>Formulario accesible: labels, ayudas y validacion basica en HTML5</p>
       </div>
     </header>
 
@@ -34,10 +34,78 @@
     <main id="contenido">
       <div class="container">
         <section class="card">
-          <h2>Pendiente</h2>
-          <p>
-            Aquí irá el formulario con <code>label</code>, validación HTML5 y buenas prácticas de accesibilidad.
-          </p>
+          <h2>Escribenos</h2>
+          <p class="muted">los campos obligatorios deben ser completados para enviar</p>
+
+          <form action="#" method="post">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre Completo <span aria-hidden="true">*</span></label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="3" maxlength="80" aria-describedby="ayuda-nombre">
+                <p id="ayuda-nombre" class="help">Minimo 3 caracteres</p>
+              </div>
+
+              <div class="field">
+                <label for="email">Correo <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="ayuda-email">
+                <p id="ayuda-email" class="help">Ejemplo: nombre@dominio.com</p>
+              </div>
+
+              <div class="field">
+                <label for="telefono">Telefono (opcional)</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="ayuda-telefono">
+                <p id="ayuda-telefono" class="help">incluye un indicativo, por ejemplo +57 3001234567</p>
+              </div>
+
+              <div class="field">
+                <label for="asunto">Asunto <span aria-hidden="true">*</span></label>
+                <input id="asunto" name="asunto" type="text"
+                required minlength="5" maxlength="120" aria-describedby="ayuda-asunto">
+                <p id="ayuda-asunto" class="help">Describe el tema en una frase corta.</p>
+              </div>
+            </div>
+
+            <div class="fieldset">
+              <fieldset class="fieldset">
+                <legend>Motivo del contacto <span aria-hidden="true">*</span></legend>
+
+                <label class="option">
+                  <input type="radio" name="motivo" value="soporte" required>Soporte
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="motivo" value="cotizacion">
+                  Cotización
+                </label>
+                <label class="option">
+                  <input type="radio" name="motivo" value="otro">
+                  Otro
+                </label>
+
+                  <p class="help">Selecciona una opción.</p>
+
+              </fieldset>
+
+              <div class="field">
+                <label for="mensaje">Mensaje <span aria-hidden>*</span></label>
+                <textarea name="mensaje" id="mensaje" required minlength="20" maxlength="1600" rows="6" aria-describedby="ayuda-mensaje"></textarea>
+                <p id="ayuda-mensaje" class="help">Minimo 20 caracteres, Sé especifico.</p>
+              </div>
+
+              <label class="option">
+                <input type="checkbox" name="acepto" required>
+                Confirmo que la información suministrada es correcta. <span aria-hidden="true">*</span>
+              </label>
+
+
+              <div class="actions">
+                <button type="submit" class="btn">Enviar</button>
+                <button type="reset" class="btn btn-ghost">Limpiar</button>
+              </div>
+            </div>
+            <p class="help">en proyectos reales la validacion del nagador se complementa con validaciones a nivel del backend</p>
+          </form>
+
         </section>
       </div>
     </main>

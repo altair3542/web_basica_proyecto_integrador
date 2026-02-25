@@ -105,3 +105,106 @@ figure{ margin:0 0 var(--s2); }
 figcaption{ color:var(--muted); margin-top:var(--s0); }
 iframe,video,audio,img{ max-width:100%; border-radius:var(--radius); }
 img{ display:block; }
+
+
+
+/* sesion 5 */
+
+.muted {
+  color: var(--muted);
+}
+
+form {
+  margin-top: var(--s-1)
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s2);
+}
+
+.field {
+  display: grid;
+  gap: var(--s-1)
+}
+
+label {
+  font-weight: 700;
+}
+
+input, textarea, select{
+  width: 100%;
+  padding:  var(--s0) var(--s1);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 85%, black);
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0,92rem;
+}
+
+.fieldset {
+  margin: var(--s2) 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s1);
+}
+
+legend{
+  padding: 0 var(--s0);
+  font-weight: 800;
+}
+
+.option{
+  /* display: flex; */
+  gap: var(--s0);
+  align-items: center;
+  margin: var(--s0) 0;
+}
+
+
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin-top: var(--s2);
+}
+
+
+.btn{
+  padding: var(--s0) var(--s2);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brand) 65%, var(--border));
+  background: var(--brand);
+  color: #111827;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+.btn-ghost{
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+  input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--brand) 75%, white);
+  outline-offset: 2px;
+  }
+}
+/* Validación: inválido */
+input:invalid, textarea:invalid, select:invalid{
+  border-color: color-mix(in srgb, #ef4444 70%, var(--border));
+/* Mejor UX: rojo tras interacción (si hay soporte) */
+  input:user-invalid, textarea:user-invalid, select:user-invalid{
+  border-color: color-mix(in srgb, #ef4444 80%, var(--border));
+}
+}
