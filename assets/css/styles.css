@@ -203,8 +203,74 @@ legend{
 /* Validación: inválido */
 input:invalid, textarea:invalid, select:invalid{
   border-color: color-mix(in srgb, #ef4444 70%, var(--border));
+}
 /* Mejor UX: rojo tras interacción (si hay soporte) */
   input:user-invalid, textarea:user-invalid, select:user-invalid{
   border-color: color-mix(in srgb, #ef4444 80%, var(--border));
 }
+
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+/* === Layout + Responsive (Sesión 6) === */
+
+.stack {
+  display: grid;
+  gap: var(--s2);
+}
+
+.row {
+  display: flex;
+  gap: var(--s1);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--s2);
+}
+
+.cards {
+  display: grid;
+  gap: var(--s2);
+  grid-template-columns: 1fr;
+}
+
+.nav a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card, p, li {
+  overflow-wrap: anywhere;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table-scroll table {
+  min-width: 640px;
+}
+
+
+
+@media (min-width: 640px){
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px){
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
